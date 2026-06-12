@@ -1,54 +1,651 @@
-Your **final GitHub-ready `index.html` file** has been generated successfully. 🎉
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bikash Choudhary | Finance & Accounts Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-### Download it here:
+    :root {
+      --bg:        #0d0f14;
+      --bg2:       #13161e;
+      --bg3:       #1a1e29;
+      --border:    #232840;
+      --gold:      #c9a84c;
+      --gold-dim:  #8a6e2e;
+      --text:      #e8e8e8;
+      --muted:     #7a8099;
+      --white:     #ffffff;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+    }
 
-📄 [index_final_github.html](sandbox:/mnt/data/index_final_github.html)
+    html { scroll-behavior: smooth; }
 
-### What's included:
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-* ✅ Professional circular profile photo integrated into the Hero section
-* ✅ **Download CV** button linked to `resume.pdf`
-* ✅ LinkedIn Profile button
-* ✅ Contact Me button
-* ✅ Executive-style finance portfolio layout
-* ✅ Mobile-friendly design
-* ✅ All your previous updates (AI in Finance, Zoho migration, Google Sheets automation, achievements, etc.)
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(13,15,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
 
----
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 6vw 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 760px; }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.2vw, 1.4rem);
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 1.8rem;
+      font-style: italic;
+    }
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0d0f14;
+    }
+    .btn-primary:hover { background: #e0bc64; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); transform: translateY(-2px); }
 
-### Final GitHub Repository Structure
+    /* ── SECTIONS ── */
+    section { padding: 90px 6vw; }
+    section:nth-child(even) { background: var(--bg2); }
 
-Make sure your repository contains these files:
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3rem;
+      max-width: 700px;
+    }
+    .section-title span { color: var(--gold); }
 
-```text
-Bikash-Choudhary/
-│
-├── index.html              ← Rename the downloaded file to this
-├── professional_profile.png
-└── resume.pdf
-```
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.97rem; }
+    .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+    .highlight-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.4rem;
+      border-radius: 2px;
+    }
+    .highlight-card strong {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .highlight-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
 
-### Final Steps
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      border-radius: 4px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { border-color: var(--gold-dim); transform: translateY(-3px); }
+    .skill-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .skill-card h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .skill-card p { font-size: 0.82rem; color: var(--muted); }
 
-1. Download `index_final_github.html`
-2. Rename it to:
+    /* ── EXPERIENCE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 1px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -2rem;
+      top: 8px; width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg);
+      transform: translateX(-4px);
+    }
+    .timeline-meta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-item h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-item .company {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+    .timeline-item ul {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline-item ul li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .timeline-item ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--gold-dim);
+    }
 
-```text
-index.html
-```
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 4px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--gold-dim); transform: translateY(-3px); }
+    .project-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    .project-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .project-card p { font-size: 0.85rem; color: var(--muted); }
 
-3. Replace the existing `index.html` in GitHub:
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-intro { font-size: 0.97rem; color: var(--muted); margin-bottom: 2rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .contact-icon {
+      width: 40px; height: 40px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .contact-item a, .contact-item span {
+      font-size: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .contact-item a:hover { color: var(--gold); }
 
-   * Open `index.html`
-   * Click **✏️ Edit**
-   * Delete the old content
-   * Paste the new content **OR** upload the new file
-   * Click **Commit changes**
+    .contact-right h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .contact-right p { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; }
 
-4. Wait **1–2 minutes** for GitHub Pages to redeploy.
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
 
-Then refresh:
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-🌐 **[https://bikashchoudhary.in](https://bikashchoudhary.in)**
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .nav-links { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; }
+    }
+  
+.achievement-card {
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    border: none;
+}
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+.achievement-blue { background: linear-gradient(135deg, #4F46E5, #7C3AED); }
+.achievement-green { background: linear-gradient(135deg, #059669, #10B981); }
+.achievement-orange { background: linear-gradient(135deg, #EA580C, #F59E0B); }
+.achievement-red { background: linear-gradient(135deg, #DC2626, #EF4444); }
+.achievement-cyan { background: linear-gradient(135deg, #0891B2, #06B6D4); }
+.achievement-purple { background: linear-gradient(135deg, #9333EA, #C026D3); }
+.achievement-card h3 { color: white; margin-bottom: 0.75rem; }
+.achievement-card p { color: rgba(255,255,255,0.9); }
 
-Your photo and CV download button should now be visible and working correctly. 🚀
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">BC</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:50px; width:100%;">
+    <div class="hero-inner" style="flex:1; min-width:300px;">
+      <div class="hero-eyebrow">Finance & Accounts Professional</div>
+      <h1>Bikash<br>Choudhary</h1>
+      <div class="hero-title">Associate Manager – Finance & Accounts | FP&A | Treasury | Finance Transformation</div>
+      <p class="hero-bio">Results-driven finance professional with 9+ years of experience in FP&A, budgeting, cash flow forecasting, treasury operations, statutory compliance, and finance transformation.</p>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num" style="font-size:1.15rem;">9+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-num" style="font-size:1.15rem;">2018</div>
+          <div class="stat-label">Joined Inspiria</div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="resume.pdf" download class="btn btn-primary">Download CV</a>
+        <a href="https://linkedin.com/in/bikash-choudhary" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div style="flex:0 0 280px; text-align:center;">
+      <img src="professional_profile.png" alt="Bikash Choudhary"
+      style="width:280px;height:280px;border-radius:50%;object-fit:cover;border:5px solid #c9a84c;box-shadow:0 20px 50px rgba(0,0,0,0.35);">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <div class="section-title">Finance that <span>drives decisions</span>, not just records them.</div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I am a Finance & Accounts professional currently working as Associate Manager at Inspiria Knowledge Campus in Siliguri, West Bengal. I began my career in Finance in December 2016 and joined Inspiria in April 2018, growing from an Accounts Team Member to taking full ownership of core finance operations.</p>
+      <p>My work spans end-to-end accounting, payroll processing, GST & TDS compliance, internal audits, and MIS reporting. I believe in building structured, disciplined financial systems that give management the clarity they need to make confident decisions.</p>
+      <p>I actively use ERP platforms including Tally, Zoho Books, and QuickBooks, alongside advanced Excel and Google Sheets, to streamline workflows and reduce reporting timelines.</p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <strong>Domain Focus</strong>
+        <p>Education sector finance, compliance frameworks, payroll & statutory obligations</p>
+      </div>
+      <div class="highlight-card">
+        <strong>Core Strength</strong>
+        <p>Finalization of accounts, MIS reporting, receivables & payables, audit coordination</p>
+      </div>
+      <div class="highlight-card">
+        <strong>What I'm Looking For</strong>
+        <p>Roles in Finance & Accounts, Compliance, or Financial Operations with leadership growth</p>
+      </div>
+      <div class="highlight-card">
+        <strong>Location</strong>
+        <p>Siliguri, West Bengal — open to relevant opportunities</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <div class="section-title">What I <span>bring to the table</span></div>
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-icon">📒</div>
+      <h3>Book-Keeping & Accounts</h3>
+      <p>Full-cycle accounting, finalization of accounts, receivables & payables management, and financial reporting.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🧾</div>
+      <h3>Taxation & GST</h3>
+      <p>GST filing, TDS compliance, statutory returns, and tax planning aligned with regulatory requirements.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💼</div>
+      <h3>Payroll & Gratuity</h3>
+      <p>End-to-end payroll processing, gratuity calculations, PF/ESI compliance, and workforce cost analysis.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔍</div>
+      <h3>Internal Audit</h3>
+      <p>Audit planning, zone-wise testing, issue logging, compliance tracking, and audit report preparation.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <h3>Financial Reporting & MIS</h3>
+      <p>Management reporting, budget variance analysis, P&L mapping, and decision-support dashboards.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🖥️</div>
+      <h3>ERP & Tools</h3>
+      <p>Tally, Zoho Books, QuickBooks, advanced Excel, Google Sheets — process automation and efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career Journey</div>
+  <div class="section-title">A <span>decade of ownership</span> in finance operations</div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-meta">April 2018 – Present</div>
+      <h3>Associate Manager – Finance & Accounts</h3>
+      <div class="company">Inspiria Knowledge Campus, Siliguri</div>
+      <ul>
+        <li>Oversee end-to-end accounting, compliance, payroll, and financial reporting</li>
+        <li>Lead internal audit cycles across all operational zones</li>
+        <li>Manage GST, TDS, and all statutory compliance obligations</li>
+        <li>Deliver MIS reports and financial insights to senior management</li>
+        <li>Strengthened internal controls and built structured finance processes</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-meta">December 2016 – April 2018</div>
+      <h3>Executive – Accounts</h3>
+      <div class="company">Manoj Kumar Goyal & Associates (Chartered Accountants), Siliguri</div>
+      <ul>
+        <li>Managed client ledgers, invoicing, accounts payable and receivable, and financial record maintenance across multiple industries.</li>
+        <li>Conducted internal audits, identified discrepancies, and recommended corrective actions to strengthen controls and compliance.</li>
+        <li>Prepared and filed VAT and GST returns, supporting clients during the transition to the GST regime.</li>
+        <li>Worked with businesses in trading, logistics, and service sectors, gaining diverse exposure to accounting and taxation practices.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Key Initiatives</div>
+  <div class="section-title">Work that <span>made a difference</span></div>
+  <div class="projects-grid reveal">
+    </div>
+</section>
+
+
+<section id="achievements">
+<div class="section-label">Key Achievements</div>
+<div class="section-title">Delivering <span>measurable impact</span></div>
+<div class="projects-grid reveal">
+<div class="project-card achievement-card achievement-blue"><h3>Fee Recovery Initiative</h3><p>Improved collection efficiency and strengthened cash flow.</p></div>
+<div class="project-card achievement-card achievement-green"><h3>Cost Optimization</h3><p>Implemented internal controls and optimized resources.</p></div>
+<div class="project-card achievement-card achievement-orange"><h3>Investment Management</h3><p>Managed trust fund portfolio within government norms.</p></div>
+<div class="project-card achievement-card achievement-red"><h3>Zero Compliance Penalties</h3><p>Maintained 100% on-time statutory compliance.</p></div>
+
+<div class="project-card">
+<span class="project-tag">Artificial Intelligence</span>
+<h3>Implementation of AI in Finance using Claude & ChatGPT</h3>
+<p>Applied AI for agreement reviews, compliance support, financial analysis, formula generation, MIS drafting, and audit assistance.</p>
+</div>
+
+
+<div class="project-card achievement-card achievement-cyan"><h3>Google Sheets Automation</h3><p>Developed automated Google Sheets solutions and dashboards to streamline reporting, reconciliations, compliance tracking, and MIS preparation, significantly improving efficiency and reducing manual effort.</p></div>
+
+<div class="project-card achievement-card achievement-purple"><h3>Migration to Zoho Books</h3><p>Successfully executed the migration from Tally to Zoho Books while maintaining complete data integrity and ensuring seamless transition of finance operations.</p></div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's Connect</div>
+  <div class="section-title">Open to <span>opportunities & conversations</span></div>
+  <div class="contact-grid reveal">
+    <div>
+      <p class="contact-intro">Whether you're looking for a finance professional, exploring collaboration, or simply want to connect — I'd be glad to hear from you.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <a href="mailto:ibikashchoudhary@gmail.com">ibikashchoudhary@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <a href="tel:+917679465302">+91 76794 65302</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div>
+            <div class="contact-item-label">LinkedIn</div>
+            <a href="https://linkedin.com/in/bikash-choudhary" target="_blank">linkedin.com/in/bikash-choudhary</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <span>Siliguri, West Bengal, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Open to opportunities in:</h3>
+      <p>Finance & Accounts · Statutory Compliance · Financial Operations · Internal Audit · MIS & Reporting</p>
+      <a href="mailto:ibikashchoudhary@gmail.com" class="btn btn-primary">Send me an email →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Bikash Choudhary · <a href="https://bikashchoudhary.in">bikashchoudhary.in</a></span>
+  <span>Associate Manager – Finance & Accounts</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
